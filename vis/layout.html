@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{{ url_for('static', filename = 'img/A1.png') }}"/>
+        <title>{% block title %}{% endblock %}</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/menu.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/home.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/research.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/team.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/test.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/types.css') }}">
+        <!--JavaScript-->
+    </head>
+    <body>
+        <div class="loader"></div>
+        <script>
+            window.addEventListener("load", () => {
+            const loader = document.querySelector(".loader");
+
+            loader.classList.add("loader--hidden");
+
+            loader.addEventListener("transitionend", () => {
+                document.body.removeChild(loader);
+            });
+        });
+        </script>
+        <!-- Navigation -->
+        {% include 'menu.html' %}
+        <!-- Page Content -->
+        {% block page_content %}{% endblock %}
+        <!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
+        {% include 'footer.html' %}
+    </body>
+</html>

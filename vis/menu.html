@@ -1,0 +1,39 @@
+<nav class="navbar">
+    <div class="content">
+    <div class="logo">
+        <a class="navbar-logo-contain" href="{{ url_for('pages', page='home') }}"><img class="navbar-logo" src="static\img\A2.png"></a>
+    </div>
+    <ul class="menu-list">
+        <div class="icon cancel-btn">
+            <i class="fas fa-times"></i>
+        </div>
+            <li class="navbar-list-coloumn"><a class="navbar-list-item" href="{{ url_for('pages', page='types') }}">Tools</a></li>
+            <li class="navbar-list-coloumn"><a class="navbar-list-item" href="{{ url_for('pages', page='types') }}">Types</a></li>
+            <li class="navbar-list-coloumn"><a class="navbar-list-item" href="{{ url_for('pages', page='test') }}">Test</a></li>
+            <li class="navbar-list-coloumn"><a class="navbar-list-item" href="{{ url_for('pages', page='team') }}">Team</a></li>
+            <li class="navbar-list-coloumn"><a class="navbar-list-item" href="{{ url_for('pages', page='research') }}">Research</a></li>
+        </ul>
+        <div class="icon menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>   
+        <script>
+            const body = document.querySelector("body");
+            const navbar = document.querySelector(".navbar");
+            const menuBtn = document.querySelector(".menu-btn");
+            const cancelBtn = document.querySelector(".cancel-btn");
+            menuBtn.onclick = ()=>{
+                navbar.classList.add("show");
+                menuBtn.classList.add("hide");
+                body.classList.add("disabled");
+            }
+            cancelBtn.onclick = ()=>{
+                body.classList.remove("disabled");
+                navbar.classList.remove("show");
+                menuBtn.classList.remove("hide");
+            }
+                window.onscroll = ()=>{
+                this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+            }
+        </script>
+    </div>
+</nav>

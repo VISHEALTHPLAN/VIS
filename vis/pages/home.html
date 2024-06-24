@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}THE BODY REPORT{% endblock %}
+{% block page_content %}
+<div class="home-header">
+    <h1 class="home-header-title">THE BODY REPORT</h1>
+    <h2 class="home-header-subtitle">CUSTOMIZED JUST TO SUIT YOU</h2>
+    <a class="home-header-btn" href="{{ url_for('pages', page='home') }}">Start Now</a>
+</div>
+<div class="home-body">
+  <div class="home-body-container">
+	<div class="home-water"></div>
+  </div>
+  <div class="home-paragraph">
+      <h1 class="home-paragraph-heading">LEARN ABOUT THE DIFFERENCES</h1>
+      <a class="home-paragraph-btn" href="{{ url_for('pages', page='home') }}"> </a>
+      <a class="home-paragraph-btn2" href="{{ url_for('pages', page='home') }}">CALORIE CALCULATOR</a>
+      <a class="home-paragraph-btn2" style="top: 5%;" href="{{ url_for('pages', page='home') }}"></a>
+      <a class="home-paragraph-btn2" style="top: 10%;" href="{{ url_for('pages', page='home') }}"></a>
+  </div>
+</div>
+{% endblock %}
